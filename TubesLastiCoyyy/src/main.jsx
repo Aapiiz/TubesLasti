@@ -1,10 +1,25 @@
+//import library
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
-import './index.css'
+import './index.css';
+import {createBrowserRouter, RouterProvider} from 'react-router-dom';
+
+//import pages
+
+
+const router = createBrowserRouter([
+  //menuju page login (pembeli)
+  {
+
+  },
+  //menuju page x
+  {
+
+  }
+]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </React.StrictMode>,
-)
+);
