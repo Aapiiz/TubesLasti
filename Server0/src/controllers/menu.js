@@ -1,5 +1,7 @@
 const {validationResult} = require('express-validator');
 const MenuPost = require('../models/menu');
+const path = require('path');
+const fs = require('fs');
 
 exports.createMenu = (req, res, next) => {
     const errors = validationResult(req);
@@ -20,14 +22,12 @@ exports.createMenu = (req, res, next) => {
     const namamenu = req.body.namamenu;
     const image = req.file.path;
     const deskripsi = req.body.deskripsi;
-    const stok = req.body.stok;
     const harga = req.body.harga;
 
     const Posting = new MenuPost({
         namamenu: namamenu,
         image: image,
         deskripsi: deskripsi,
-        stok: stok,
         harga: harga
     });
 
@@ -94,3 +94,36 @@ exports.patchMenu = (req, res, next) => {
         next(err)
     })
 }
+
+exports.deleteMenu = (req, res, next) => {
+    const postId = req.params.postId;
+
+    MenuPost.findById(postId)
+    .then(post => {
+        if(!post){
+            const err = new Error('Menu post tidak ditemukan');
+            err.errorStatus = 404;
+            throw err;
+        }
+
+        // removeImage(post.image);
+        return MenuPost.findByIdAndDelete(postId);
+    })
+    .then(result => {
+        res.status(200).json({
+            message: 'Hapus Menu Berhasil',
+            data : result
+        })
+    })
+    .catch(err => {
+        next(err);
+    })
+}
+
+// const removeImage = (filePath) => {
+//     console.log('filepath', filePath);
+//     console.log('dir name: ', __dirname);
+
+//     filePath = path.join(__dirname, '../..', filePath);
+//     fs.unlinkSync(filePath, err => console.log(err));
+// }

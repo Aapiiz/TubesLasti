@@ -22,4 +22,8 @@ router.patch('/patchmenu/:postId',[
     body('stok').isNumeric()],
     menuController.patchMenu);
 
+// Endpoint 4 : DELETE menu -> DELETE [localhost:4000/menu/deletemenu/:postId]
+router.delete('/deletemenu/:postId', 
+    menuController.deleteMenu);
+
 module.exports = router;
