@@ -2,8 +2,8 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const Pesanan = new Schema({
-    nama: {
-        type: String,
+    nomormeja: {
+        type: Number,
         required: true
     },
     listmenu: {
