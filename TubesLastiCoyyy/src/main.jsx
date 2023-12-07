@@ -6,11 +6,13 @@ import {createBrowserRouter, RouterProvider} from 'react-router-dom';
 
 //import pages
 import DaftarMenuPage from './pages/daftarMenu';
+import NoMeja from './pages/NoMeja';
 
 const router = createBrowserRouter([
   //menuju page login (pembeli)
   {
-
+    path: "",
+    element: <NoMeja />,
   },
   //menuju page daftar menu
   {
