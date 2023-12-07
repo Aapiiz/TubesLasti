@@ -3,7 +3,7 @@
 @import "tailwindcss/utilities";
 
 body {
-    background-color:#F8EDE3 ;
+    background-color:white ;
 }
 
 @layer base {

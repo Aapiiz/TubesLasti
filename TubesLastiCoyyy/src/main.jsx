@@ -4,13 +4,15 @@ import ReactDOM from 'react-dom/client'
 import './index.css';
 import {createBrowserRouter, RouterProvider} from 'react-router-dom';
 
-//import pages
 
+//import pages
+import Login from './page/Login';
 
 const router = createBrowserRouter([
   //menuju page login (pembeli)
   {
-
+    path: "/contoh",
+    element: <Login />,
   },
   //menuju page x
   {
