@@ -34,20 +34,20 @@ const ContentDaftarMenu = () => {
 //     })
 //   }, [nomormeja, pesanan._id])
 
-  const [menus, setMenus] = useState([]);
-  
+
+const [menus, setMenus] = useState([]);  
 // API Get All Menu
-//   useEffect(() => {
-//     Axios.get(`http://localhost:4000/menu/readmenu/${location.pathname.split("/")[2]}`)
-//     .then((result) => {
-//       console.log("data API", result.data);
-//       const responseAPI = result.data;
-//       setMenus(responseAPI.data);
-//     })
-//     .catch((err) => {
-//       console.log("error : ", err);
-//     })
-//   }, [location.pathname]);
+  useEffect(() => {
+    Axios.get('http://localhost:4000/menu/readmenu/')
+    .then((result) => {
+      console.log("data API", result.data);
+      const responseAPI = result.data;
+      setMenus(responseAPI.data);
+    })
+    .catch((err) => {
+      console.log("error : ", err);
+    })
+  }, [location.pathname]);
 
   return (
     <div className="flex justify-center items-center w-screen min-h-full mb-auto x-w-[1920px] mx-auto py-4 px-4 relative">

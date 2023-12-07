@@ -7,12 +7,9 @@ const CardMenu = (props) => {
   const {
     gambar = "../../../public/assets/makanan.jpeg",
     deskripsi = "Tanpa Deskripsi",
-    stok = "0",
     harga = 0,
-    idpesanan = "",
+    // idpesanan = "",
     menuid = "",
-    idtenant = "",
-    namatenant = "",
     namamenu = "",
   } = props;
 
