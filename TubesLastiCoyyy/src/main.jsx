@@ -5,16 +5,17 @@ import './index.css';
 import {createBrowserRouter, RouterProvider} from 'react-router-dom';
 
 //import pages
-
+import DaftarMenuPage from './pages/daftarMenu';
 
 const router = createBrowserRouter([
   //menuju page login (pembeli)
   {
 
   },
-  //menuju page x
+  //menuju page daftar menu
   {
-
+    path: "/daftarmenu/",
+    element: <DaftarMenuPage />,
   }
 ]);
 
