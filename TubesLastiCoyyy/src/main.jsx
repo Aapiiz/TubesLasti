@@ -22,7 +22,7 @@ const router = createBrowserRouter([
   },
   //menuju review menu page
   {
-    path: "/reviewMenu/",
+    path: "/reviewmenu/",
     element: <ReviewMenuPage />,
   },
 

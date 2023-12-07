@@ -19,14 +19,16 @@
 
 // import NavbarPelanggan from "../components/NavbarPelanggan";
 import ContentReviewMenu from "../components/ContentReviewMenu";
+import Footer from "../components/Footer";
+import Header from "../components/Header";
 // import Footer from "../components/Footer";
 
 const ReviewMenuPage = () => {
     return (
         <div className='flex flex-col h-screen bg-[#F8EDE3]'>
-            {/* <NavbarPelanggan/> */}
+            <Header/>
             <ContentReviewMenu/>
-            {/* <Footer/> */}
+            <Footer/>
         </div>
     )
 };
