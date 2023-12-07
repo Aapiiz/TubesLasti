@@ -24,7 +24,6 @@ const CardMenu = (props) => {
     // hargatotal: PropTypes.number.isRequired,
   };
 
-  const [responseStok, setResponseStok] = useState({});   //Penyimpan stok
   const [keranjang, setKeranjang] = useState();   //Jumlah pesan
   const [response, setResponse] = useState();     //Response getAPI pesanan
 

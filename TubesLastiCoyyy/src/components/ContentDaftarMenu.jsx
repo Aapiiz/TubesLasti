@@ -12,10 +12,10 @@ const ContentDaftarMenu = () => {
       idpesanan = location.state.idpesanan;    
   } catch (error) {
       alert('anda harus memasukkan nama pemesan terlebih dahulu')
-      window.location = '/MemasukkanNomorMeja'; //di login harus masukan n
+      window.location = '/MemasukkanNomorMeja'; //di login harus masukan nomor meja
   }
 
-// Get All Pesanan
+// Get Pesanan
   const [pesanan, setPesanan] = useState({});
   useEffect(() => {
     Axios.get(`http://localhost:4000/pesanan/readpesananunique/${idpesanan}`)
