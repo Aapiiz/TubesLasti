@@ -6,7 +6,7 @@ import {createBrowserRouter, RouterProvider} from 'react-router-dom';
 
 
 //import pages
-import NoMeja from './page/NoMeja';
+import NoMeja from './pages/NoMeja';
 
 const router = createBrowserRouter([
   //menuju page login (pembeli)
