@@ -8,7 +8,7 @@ const CardMenu = (props) => {
     gambar = "../../../public/assets/makanan.jpeg",
     deskripsi = "Tanpa Deskripsi",
     harga = 0,
-    // idpesanan = "",
+    idpesanan = "",
     menuid = "",
     namamenu = "",
   } = props;
@@ -16,9 +16,8 @@ const CardMenu = (props) => {
   CardMenu.propTypes = {
     gambar: PropTypes.string.isRequired,
     deskripsi: PropTypes.string.isRequired,
-    stok: PropTypes.number.isRequired,
     harga: PropTypes.number.isRequired,
-    // idpesanan: PropTypes.string.isRequired,
+    idpesanan: PropTypes.string.isRequired,
     menuid: PropTypes.string.isRequired,
     namamenu: PropTypes.string.isRequired,
     // listmenupesanan: PropTypes.array.isRequired,
@@ -28,9 +27,8 @@ const CardMenu = (props) => {
   const [responseStok, setResponseStok] = useState({});   //Penyimpan stok
   const [keranjang, setKeranjang] = useState();   //Jumlah pesan
   const [response, setResponse] = useState();     //Response getAPI pesanan
-  const [objMenu, setObjMenu] = useState();     //Response getAPI pesanan
 
-  console.log("idpesanan : ", idpesanan);
+  console.log("idpesanan : ", idpesanan); //Cek id pesanan
 
   useEffect(() => {
     Axios.get(`http://localhost:4000/pesanan/readpesananunique/${idpesanan}`)
@@ -47,41 +45,30 @@ const CardMenu = (props) => {
 
   //Change Handler
   const handleChange = () => {
-    //API patch menu
-    responseStok.stok = stok - keranjang;
-    console.log("Stok terkini : ", responseStok); //Cek stok terkini
-    Axios.patch(`http://localhost:4000/menu/patchmenu/${menuid}`, responseStok)
-      .then((response) => {
-        console.log("Menu berhasil diperbarui:", response.data);
-      })
-      .catch((error) => {
-        console.error("Error saat memperbarui menu:", error);
-      });
 
     //Object menu dalam listmenu
     const menu = {
-      "idtenant": idtenant,
-      "namatenant": namatenant,
       "namamenu": namamenu,
       "harga": harga,
-      "jumlah": keranjang,
-      "statuspesanan": "Belum Dibayar"
+      "jumlah": Number(keranjang)
     }
 
+    //Algoritma mengecek dobel menu dalam pesanan
     let itemSama = false;
     for (let i = 0; i < response.listmenu.length; i++) {
-      if (response.listmenu[i].namamenu == menu.namamenu && response.listmenu[i].idtenant == menu.idtenant) {
+      if (response.listmenu[i].namamenu == menu.namamenu) {
         response.listmenu[i].jumlah += Number(keranjang);
         itemSama = true;
       }
     }
-    console.log("Keranjang : ", keranjang);  //Cek menu yang di push
-    console.log("Cek menu : ", menu);  //Cek menu yang di push
     if (!itemSama) {
       response.listmenu.push(Object(menu));
     }
-    console.log("Cek response after push : ", response);  //Cek menu yang di push
     
+    console.log("Keranjang : ", keranjang);  //Cek menu yang di push
+    console.log("Cek menu : ", menu);  //Cek menu yang di push
+
+    console.log("Cek response after push : ", response);  //Cek menu yang di push
 
     //API patch pesanan
     Axios.patch(`http://localhost:4000/pesanan/updatepesanan/${idpesanan}`, response)
@@ -94,8 +81,7 @@ const CardMenu = (props) => {
 
     
     //Set harga total
-    response.hargatotal += (harga*keranjang);
-              
+    response.hargatotal += (harga*keranjang);           
     
     //API patch harga total
     Axios.patch(`http://localhost:4000/pesanan/updatehargatotal/${idpesanan}`, response)
@@ -131,16 +117,13 @@ const CardMenu = (props) => {
       <div className="h-full w-full bg-[#D9D9D9] py-3 border border-[#8a8a8a] rounded-lg">
         <div className="h-1/2 w-initial relative mx-3 flex justify-center">
           <img src={gambar} alt={gambar} className="h-full w-full rounded-lg border-2 border-[#8ea686]" />
-          <div className="h-2/6 w-full flex justify-center items-center bg-[#FFFFFF] rounded-b-lg border-2 border-[#8ea686] absolute bottom-0 px-2">
+          {/* <div className="h-2/6 w-full flex justify-center items-center bg-[#FFFFFF] rounded-b-lg border-2 border-[#8ea686] absolute bottom-0 px-2">
             <h1 className="font-semibold truncate">{children}</h1>
-          </div>
+          </div> */}
         </div>
         <div className="h-1/2 w-initial pt-3 flex justify-between flex-col mx-3">
           <div className="flex justify-center items-center px-2">
             <h1 className="text-xs truncate">{deskripsi}</h1>
-          </div>
-          <div className="flex justify-center items-center px-2">
-            <h1 data-testid="stok" className="text-xs truncate">Tersedia {stok} stok</h1>
           </div>
           <div className="flex justify-center items-center my-1">
             <div className="flex justify-center items-center bg-[#BDD2B6] border border-[#8a8a8a] rounded-lg w-5/6 px-2">
