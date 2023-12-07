@@ -3,7 +3,7 @@ import Footer from "../component/footer";
 import Header from "../component/Header"
 import React from "react";
 
-const Login  = () => {
+const NoMeja  = () => {
     return(
         <div className="flex flex-col h-screen">
             <Header />
@@ -13,4 +13,4 @@ const Login  = () => {
     )
 }; 
 
-export default Login;
+export default NoMeja;

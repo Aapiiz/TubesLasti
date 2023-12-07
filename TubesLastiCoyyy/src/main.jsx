@@ -6,13 +6,13 @@ import {createBrowserRouter, RouterProvider} from 'react-router-dom';
 
 
 //import pages
-import Login from './page/NoMeja';
+import NoMeja from './page/NoMeja';
 
 const router = createBrowserRouter([
   //menuju page login (pembeli)
   {
-    path: "/contoh",
-    element: <Login />,
+    path: "",
+    element: <NoMeja />,
   },
   //menuju page x
   {

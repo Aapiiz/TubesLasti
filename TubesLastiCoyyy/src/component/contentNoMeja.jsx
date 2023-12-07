@@ -51,7 +51,7 @@ const ContentNoMeja = () => {
                         <input id="nomeja" type="nomeja" className="w-full shadow-md" placeholder="  Masukkan antara 1-10" onChange={(e) => setNomorMeja(e.target.value)} />
                     </div>
                     <div className="flex justify-center mt-[20px]">
-                        <button className='rounded-full h-10 w-36 text-xl font-bold text-[#F8F0E5] bg-[#0F2C59] shadow-md shadow-[#798777] hover:bg-[#e3d9d0]' onClick={submit}>
+                        <button className='rounded-full h-10 w-36 text-xl font-bold text-[#F8F0E5] bg-[#0F2C59] shadow-md shadow-[#798777] hover:bg-[#e3d9d0]' >
                             Submit
                         </button>
                     </div>
