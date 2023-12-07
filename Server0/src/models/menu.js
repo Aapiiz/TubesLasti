@@ -16,10 +16,6 @@ const MenuPost = new schema({
         type: String,
         required: true
     },
-    stok: {
-        type: Number,
-        required: true
-    },
     harga: {
         type: Number,
         required: true
