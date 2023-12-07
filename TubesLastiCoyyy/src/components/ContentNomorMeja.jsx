@@ -3,7 +3,7 @@ import { useState } from "react"
 import axios from "axios"
 import { useNavigate } from "react-router-dom"
 
-const ContentNoMeja = () => {
+const ContentNomorMeja = () => {
 
     const navigate = useNavigate();
 
@@ -45,7 +45,7 @@ const ContentNoMeja = () => {
         <div className="flex h-full justify-center  items-center flex-col bg-white">
             <div className="flex justify-center py-[120px] h-[200px] flex-col align bg-[#F8F0E5] my-[10px]">
                 <div className="flex justify-center text-black font-extrabold text-4xl bg-[#F8F0E5]">Pilih Meja</div>
-                <form action="POST">
+                <form action="POST/">
                     <h1 className="mx-[40px] mt-[10px]">Nomor Meja : </h1>
                     <div className="mx-[40px]">
                         <input id="nomeja" type="nomeja" className="w-full shadow-md" placeholder="  Masukkan antara 1-10" onChange={(e) => setNomorMeja(e.target.value)} />
@@ -62,4 +62,4 @@ const ContentNoMeja = () => {
     )
 }
 
-export default ContentNoMeja
+export default ContentNomorMeja

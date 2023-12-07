@@ -6,18 +6,18 @@ import {createBrowserRouter, RouterProvider} from 'react-router-dom';
 
 //import pages
 import DaftarMenuPage from './pages/daftarMenu';
-import NoMeja from './pages/NoMeja';
+import NomorMejaPage from './pages/nomorMeja';
 
 const router = createBrowserRouter([
-  //menuju page login (pembeli)
+  //Menuju page memasukkan nomor meja
   {
     path: "",
-    element: <NoMeja />,
+    element: <NomorMejaPage/>,
   },
   //menuju page daftar menu
   {
     path: "/daftarmenu/",
-    element: <DaftarMenuPage />,
+    element: <DaftarMenuPage/>,
   }
 ]);
 

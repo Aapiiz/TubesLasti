@@ -1,16 +1,16 @@
-import ContentNoMeja from "../components/contentNoMeja";
+import ContentNomorMeja from "../components/ContentNomorMeja";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import React from "react";
 
-const NoMeja  = () => {
+const NomorMejaPage  = () => {
     return(
         <div className="flex flex-col h-screen">
             <Header />
-            <ContentNoMeja />
+            <ContentNomorMeja />
             <Footer />
         </div>
     )
 }; 
 
-export default NoMeja;
+export default NomorMejaPage;
