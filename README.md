@@ -14,10 +14,10 @@ Step by step menggunakan layanan ini :
 8. Layanan selesai
 
 Tugas besar kelompok 4 : 
-Yudy Lionardi (10023353)
-I Dewa Made Manu Pradnyana (18221047)
-Muhammad Shulhan (18221051)
-Arifuddin Achmad Subagja (18221127)
-Ananda Abdul Hafizh (18221167)
+- Yudy Lionardi (10023353)
+- I Dewa Made Manu Pradnyana (18221047)
+- Muhammad Shulhan (18221051)
+- Arifuddin Achmad Subagja (18221127)
+- Ananda Abdul Hafizh (18221167)
 
 
