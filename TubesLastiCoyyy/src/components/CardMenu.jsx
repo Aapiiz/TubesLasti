@@ -91,17 +91,9 @@ const CardMenu = (props) => {
                     console.error('Error saat memperbarui harga total:', error);
                 });
 
-    setTimeout(() => {
-      confirmAlert({
-        message: "Pesanan Berhasil",
-        buttons: [
-          {
-            label: "OK",
-            onClick: () => window.location.reload(),
-          },
-        ],
-      });
-    }, 1000);
+                setTimeout(() => {
+                  alert("Pesanan Berhasil");
+              }, 1000);
   };
 
   //Algoritma pengubah rupiah

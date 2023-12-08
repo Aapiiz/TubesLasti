@@ -19,7 +19,7 @@ exports.getAllPesanan = (req, res, next) => {
 //ENDPOINT 2 : CREATE Pesanan
 exports.createPesanan = async (req, res, next) => {
     // console.log('request : ', req.body);
-    const nomormeja = req.body.nomormeja;
+    const namapemesan = req.body.namapemesan;
     const listmenu = req.body.listmenu || [];
     const hargatotal = req.body.hargatotal;
     
@@ -37,7 +37,7 @@ exports.createPesanan = async (req, res, next) => {
     checknomormeja = false
     if(!checknomormeja) {
         const Order = new Pesanan({
-            nomormeja: nomormeja,
+            namapemesan: namapemesan,
             listmenu: listmenu,
             hargatotal: hargatotal,
         })
