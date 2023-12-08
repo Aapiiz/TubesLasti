@@ -67,7 +67,7 @@ const [menus, setMenus] = useState([]);
   }, [location.pathname]);
 
   return (
-    <div className="flex justify-center items-center w-screen min-h-full mb-auto x-w-[1920px] mx-auto py-4 px-4 relative">
+    <div className="flex justify-center items-center w-screen min-h-full mb-auto x-w-[1920px] mx-auto py-4 px-4 relative bg-white">
       <div className="kontainer min-h-[350px] w-11/12 bg-[#DAC0A3] rounded-lg border border-[#DAC0A3] mb-5">
         <h1 className="flex justify-center text-3xl font-bold my-5">Jelajah Menu</h1>
         <div className="kontainer-row flex justify-center flex-row my-5 overflow-x-hidden px-5">

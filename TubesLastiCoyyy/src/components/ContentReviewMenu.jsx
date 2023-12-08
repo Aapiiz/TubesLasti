@@ -103,15 +103,15 @@ const handlePesan = () =>{
 }
 
   return (
-    <div className="h-full">
+    <div className="h-full bg-white">
       {/* {console.log("id pesanan setelah di return : ", menuPesanan._id)} */}
       {/* Tulisan review menu */}
-      <div className="mt-8 flex justify-center">
+      <div className="mt-[10px] flex justify-center">
         <h1 className="text-4xl text-[#798777] font-bold">REVIEW MENU</h1>
       </div>
 
       {/* Berisi menu yang dipesan */}
-      <div className="mt-4 flex justify-center">
+      <div className="mt-[5px] flex justify-center">
         <div className="rounded-[30px] h-[400px] w-[1024px] bg-[#DAC0A3] overflow-y-auto">
           <div className="flex justify-between">
             <h1 className="ml-[30px] mt-5 text-2xl font-bold">Nama Pemesan:</h1>
@@ -144,11 +144,11 @@ const handlePesan = () =>{
       </div>
 
       {/* Tombol pesan dan bayar */}
-      <div className="mt-8 flex justify-center">
-        <button onClick={handlePesan} className="rounded-[20px] h-auto w-[300px] self text-center text-2xl text-[#FFFFFF] font-thin bg-[#BCD8B7] hover:bg-[#a7c1a3]">
+      <div className="mt-[10px] flex justify-center">
+        <button onClick={handlePesan} className="rounded-[20px] h-auto w-[200px] self text-center text-2xl text-[#FFFFFF] font-thin bg-[#555f53] hover:bg-[#a7c1a3]">
           Pesan
         </button>
-        <button onClick={() => navigate(`/daftarmenu/`,{state: {namapemesan: menuPesanan[0].namapemesan}})}className="rounded-[20px] h-auto w-[300px] ml-5 self text-center text-2xl text-[#FFFFFF] font-thin bg-[#d0d492] hover:bg-[#bcb185]">
+        <button onClick={() => navigate(`/daftarmenu/`,{state: {namapemesan: menuPesanan[0].namapemesan}})}className="rounded-[20px] h-auto w-[200px] ml-5 self text-center text-2xl text-[#FFFFFF] font-thin bg-[#798777] hover:bg-[#bcb185]">
           Kembali
         </button>
       </div>
