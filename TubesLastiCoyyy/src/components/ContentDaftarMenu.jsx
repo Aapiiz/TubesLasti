@@ -7,16 +7,19 @@ import {useState} from "react";
 const ContentDaftarMenu = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  console.log('location',location)
   let idpesanan; 
   try {
-      idpesanan = location.state.idpesanan;    
+      idpesanan = location.state.idpesanan;   
   } catch (error) {
       alert('anda harus memasukkan nama pemesan terlebih dahulu')
-      window.location = '/MemasukkanNomorMeja'; //di login harus masukan nomor meja
+      window.location = '/'; //di login harus masukan nomor meja
   }
 
 // Get Pesanan
   const [pesanan, setPesanan] = useState({});
+  // console.log('jncuk',location.state.idpesanan);
+  // console.log('id pesanan: ',idpesanan) 
   useEffect(() => {
     Axios.get(`http://localhost:4000/pesanan/readpesananunique/${idpesanan}`)
     .then(result => {
@@ -27,6 +30,7 @@ const ContentDaftarMenu = () => {
         console.log('error : ', err);
     })
   }, [pesanan._id])
+  ///${pesanan._id}
 
 
 const [menus, setMenus] = useState([]);  
@@ -58,7 +62,7 @@ const [menus, setMenus] = useState([]);
         </div>
       </div>
       <div className="flex justify-center items-center absolute bottom-3">
-        <button onClick={() => navigate(`/reviewmenu/${pesanan._id}`, {state: {idpesanan: idpesanan}})} className="rounded-lg flex justify-center items-center w-[200px] h-[35px] bg-[#C66666] border-[#883C3C] border-1 shadow-md shadow-[#D18A8A] hover:bg-[#b05b5b] mx-2">
+        <button onClick={() => navigate(`/reviewmenu/`, {state: {menu: menus}})} className="rounded-lg flex justify-center items-center w-[200px] h-[35px] bg-[#C66666] border-[#883C3C] border-1 shadow-md shadow-[#D18A8A] hover:bg-[#b05b5b] mx-2">
           <h1 className="text-[#FFFFFF] font-semibold">Cek Keranjang</h1>
         </button>
       </div>

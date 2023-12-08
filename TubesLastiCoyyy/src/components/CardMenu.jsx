@@ -24,7 +24,7 @@ const CardMenu = (props) => {
     // hargatotal: PropTypes.number.isRequired,
   };
 
-  const [keranjang, setKeranjang] = useState();   //Jumlah pesan
+  const [keranjang, setKeranjang] = useState(0);   //Jumlah pesan
   const [response, setResponse] = useState();     //Response getAPI pesanan
 
   console.log("idpesanan : ", idpesanan); //Cek id pesanan
@@ -132,6 +132,7 @@ const CardMenu = (props) => {
           <div className="flex justify-between items-center px-8">
             <input
               className="font-semibold w-2/6 rounded-lg text-center"
+              value={keranjang}
               type="number"
               onChange={(e) => {
                   setKeranjang(e.target.value);
