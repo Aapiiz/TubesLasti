@@ -13,6 +13,10 @@ Step by step menggunakan layanan ini :
 7. Jika customer ingin membatalkan pesanan, customer dapat menekan tombol "kembali". Akan tetapi, jika customer telah sepakat dengan data pesanan yang akan diajukan, customer dapat menekan tombol "pesan"
 8. Layanan selesai
 
+Untuk memastikan pesanan masuk ke dalam database, dapat diakses link postman collection berikut yang mengandung semua API request yang kami
+gunakan dalam prototype kali ini. Berikut link collection postman
+https://www.postman.com/interstellar-station-329448/workspace/tugas-besar-layanan-sti-kelompok-4-k01/collection/30967923-69f7d49c-6d8d-4370-8e9e-8c76e04dcf6e?action=share&creator=30967923
+
 Tugas besar kelompok 4 : 
 - Yudy Lionardi (10023353)
 - I Dewa Made Manu Pradnyana (18221047)
